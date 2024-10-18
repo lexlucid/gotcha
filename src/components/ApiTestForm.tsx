@@ -22,6 +22,9 @@ export function ApiTestForm() {
   
     console.log(`Sending request to ${url} with method ${method}`)
   }
+  const handleApiKeyChange = (checked: boolean) => {
+    setUseApiKey(checked)
+  }
 
 
   return (
@@ -70,7 +73,10 @@ export function ApiTestForm() {
           />
         </div>
         <div className="flex items-center space-x-2">
-          <Switch id="use-api-key" />
+          <Switch 
+            id="use-api-key"
+            checked={useApiKey}
+            onCheckedChange={handleApiKeyChange} />
           <Label htmlFor="use-api-key">Use API Key</Label>
         </div>
         <div>
